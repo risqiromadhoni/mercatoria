@@ -10,7 +10,10 @@
     "lint-staged": "lint-staged",
     "web:dev": "bun run --cwd apps/web dev",
     "api:dev": "bun run --cwd apps/api dev",
-    "dev": "concurrently -n web,api -c green,blue \"npm run web:dev\" \"npm run api:dev\""
+    "web:build": "bun run --cwd apps/web build",
+    "api:build": "bun run --cwd apps/api build",
+    "dev": "concurrently -n web,api -c green,blue \"npm run web:dev\" \"npm run api:dev\"",
+    "build": "concurrently -n web,api -c green,blue \"npm run web:build\" \"npm run api:build\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
