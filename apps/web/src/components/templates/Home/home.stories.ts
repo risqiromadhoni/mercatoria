@@ -15,4 +15,4 @@ const meta = {
 export default meta;
 type HomeTemplateStory = StoryObj<typeof meta>;
 
-export const MoleculeAppBar: HomeTemplateStory = {};
+export const TemplateAppBar: HomeTemplateStory = {};

@@ -8,6 +8,7 @@ import type { FC } from "react";
 import type { AppBarProps } from "./type";
 
 import "./style.css";
+import IMAGES from "@/assets/images";
 
 const AppBar: FC<AppBarProps> = (props) => {
 	const { isAuthenticated = false, className, ...headerProps } = props;
@@ -51,10 +52,7 @@ const AppBar: FC<AppBarProps> = (props) => {
 				<div className="dropdown dropdown-end">
 					<div className="btn btn-ghost btn-circle avatar">
 						<div className="w-10 rounded-full">
-							<img
-								alt="Tailwind CSS Navbar component"
-								src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-							/>
+							<img alt="Tailwind CSS Navbar component" src={IMAGES.authUser} />
 						</div>
 					</div>
 				</div>
