@@ -1,0 +1,32 @@
+.hero-carousel {
+	&.swiper {
+		@apply w-full h-full pb-14;
+	}
+
+	.swiper-slide {
+		@apply flex w-1/2 max-w-[800px] text-center justify-center items-center;
+	}
+
+	.swiper-slide img {
+		@apply block w-full h-full object-cover;
+	}
+
+	.swiper-pagination {
+		@apply bg-neutral-500 !w-fit rounded-full flex justify-center items-center p-3;
+	}
+
+	.swiper-pagination-fraction,
+	.swiper-pagination-custom,
+	.swiper-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-bullets.swiper-pagination-horizontal {
+		@apply left-[unset] !right-6;
+	}
+
+	.swiper-pagination-bullet {
+		@apply !w-2 !h-2 !bg-white;
+	}
+
+	.swiper-pagination-bullet-active {
+		@apply !w-10 !h-2 !rounded-lg !bg-white;
+	}
+}

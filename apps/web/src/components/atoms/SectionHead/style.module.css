@@ -1,0 +1,9 @@
+.section_head {
+	@apply w-full flex justify-center items-center gap-4;
+	h2 {
+		@apply text-xl font-bold text-toreaBay;
+	}
+	a {
+		@apply text-base font-bold text-toreaBay;
+	}
+}

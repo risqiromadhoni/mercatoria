@@ -13,7 +13,8 @@
 			"coverage",
 			"*.log",
 			"*.lock",
-			"commitlint.config.js"
+			"commitlint.config.js",
+			"routeTree.gen.ts"
 		],
 		"include": ["apps/web/**/*", "apps/api/**/*"]
 	},

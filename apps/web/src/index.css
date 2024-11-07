@@ -1,68 +1,47 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	@apply overscroll-none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@layer base {
+	:root {
+		--color-primary-50: 95.45% 0.0217 277.49; /* #ecefff */
+		--color-primary-100: 91.79% 0.0398 277.83; /* #dde2ff */
+		--color-primary-200: 84.88% 0.07567097956768304 278.88912769188823; /* #c2c9ff */
+		--color-primary-300: 75.36% 0.128 278.44; /* #9da6ff */
+		--color-primary-400: 63.64% 0.1984 279.16; /* #7676ff */
+		--color-primary-500: 60.98% 0.2152 281.2; /* #7368fe */
+		--color-primary-600: 50.95% 0.2583 278.78; /* #5438f3 */
+		--color-primary-700: 45.77% 0.2402 278.78; /* #482bd7 */
+		--color-primary-800: 39.77% 0.199 279.38; /* #3b26ad */
+		--color-primary-900: 35.44% 0.1559 280.84; /* #332689 */
+		--color-primary-950: 25.41% 0.0981 283.42; /* #1f174f */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+		--color-torea-bay-50: #edf4ff; /* #edf4ff */
+		--color-torea-bay-100: #dfe9ff; /* #dfe9ff */
+		--color-torea-bay-200: #c4d6ff; /* #c4d6ff */
+		--color-torea-bay-300: #a1baff; /* #a1baff */
+		--color-torea-bay-400: #7b93fe; /* #7b93fe */
+		--color-torea-bay-500: #5c6ff8; /* #5c6ff8 */
+		--color-torea-bay-600: #3f46ec; /* #3f46ec */
+		--color-torea-bay-700: #3134d1; /* #3134d1 */
+		--color-torea-bay-800: #292da2; /* #292da2 */
+		--color-torea-bay-900: #2a3085; /* #2a3085 */
+		--color-torea-bay-950: #191b4d; /* #191b4d */
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+		--color-storm-gray-50: #f7f8f8; /* #f7f8f8 */
+		--color-storm-gray-100: #ededf1; /* #ededf1 */
+		--color-storm-gray-200: #d7d9e0; /* #d7d9e0 */
+		--color-storm-gray-300: #b5b9c4; /* #b5b9c4 */
+		--color-storm-gray-400: #8c94a4; /* #8c94a4 */
+		--color-storm-gray-500: #6d7588; /* #6d7588 */
+		--color-storm-gray-600: #585e71; /* #585e71 */
+		--color-storm-gray-700: #484d5c; /* #484d5c */
+		--color-storm-gray-800: #3e424e; /* #3e424e */
+		--color-storm-gray-900: #373a43; /* #373a43 */
+		--color-storm-gray-950: #24252d; /* #24252d */
+	}
 }

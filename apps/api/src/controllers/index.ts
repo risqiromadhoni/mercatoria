@@ -8,6 +8,14 @@ class MainController {
 	}
 
 	configureRoutes() {
+		this.#configureRoutes();
+	}
+
+	#configureRoutes() {
+		this.#getRoot();
+	}
+
+	#getRoot() {
 		this.#app.get("/", () => ({ message: "Hello Elysia" }), {
 			detail: {
 				summary: "Welcome to Elysia",

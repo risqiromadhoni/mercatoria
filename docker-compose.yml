@@ -1,0 +1,74 @@
+name: mercatoria-services
+
+services:
+  redis:
+    image: redis:alpine
+    environment:
+      - REDIS_PASSWORD=redispass
+    command: ["redis-server", "--requirepass", "redispass"]
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - my_network
+
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - "5540:5540"
+    restart: always
+    networks:
+      - my_network
+    depends_on:
+      - redis
+
+  postgresql:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pgpass
+      - POSTGRES_DB=sonarqube
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pguser@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadminpass
+    networks:
+      - my_network
+    depends_on:
+      - postgresql
+
+  sonarqube:
+    image: sonarqube:community
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_JDBC_URL=jdbc:postgresql://postgresql:5432/sonarqube
+      - SONAR_JDBC_USERNAME=pguser
+      - SONAR_JDBC_PASSWORD=pgpass
+    depends_on:
+      - postgresql
+    networks:
+      - my_network
+
+volumes:
+  postgresql:
+  redis_data:
+
+networks:
+  my_network:
+    driver: bridge

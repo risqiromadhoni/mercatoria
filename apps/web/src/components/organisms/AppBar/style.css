@@ -1,0 +1,3 @@
+.navbar {
+	@apply !py-4 container bg-white gap-4;
+}
