@@ -3,14 +3,14 @@ FROM oven/bun:alpine AS base
 # Install dependencies
 FROM base AS dependencies
 WORKDIR /app
-COPY . .
-RUN bun install
+COPY ./apps/api/ .
+RUN bun install --production
 
 # Build the app
 FROM base AS build
 WORKDIR /app
 COPY --from=dependencies /app .
-RUN bun run build
+RUN ls -la && bun run build
 
 # Run the app on dist folder
 FROM base AS release
