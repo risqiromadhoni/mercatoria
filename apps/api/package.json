@@ -4,16 +4,28 @@
 	"module": "src/index.js",
 	"scripts": {
 		"dev": "bun run --watch src/index.ts",
-		"build": "bun build --minify --sourcemap --target bun ./src/index.ts --outdir ./dist"
+		"build": "bun build --minify --sourcemap --target bun ./src/index.ts --outdir ./dist",
+		"db:studio": "drizzle-kit studio",
+		"db:migrate:gen": "drizzle-kit generate",
+		"db:migrate:run": "drizzle-kit migrate"
 	},
 	"dependencies": {
 		"@elysiajs/swagger": "^1.1.5",
 		"@faker-js/faker": "^9.1.0",
+		"@paralleldrive/cuid2": "^2.2.2",
+		"dotenv": "^16.4.5",
+		"drizzle-orm": "^0.36.1",
 		"elysia": "latest",
+		"pg": "^8.13.1",
+		"postgres": "^3.4.5",
 		"radash": "^12.1.0"
 	},
 	"devDependencies": {
+		"@types/pg": "^8.11.10",
 		"bun-types": "latest",
+		"drizzle-kit": "^0.28.0",
+		"tsx": "^4.19.2",
+		"type-fest": "^4.26.1",
 		"typescript": "^5.6.3"
 	}
 }

@@ -1,15 +1,11 @@
 # mercatoria
 
-To install dependencies:
+An online shop you loved
 
-```bash
-bun install
-```
+## Web
 
-To run:
+[View Website](https://mercatoria.netlify.app/)
 
-```bash
-bun run index.ts
-```
+## API
 
-This project was created using `bun init` in bun v1.1.33. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+[View API](https://objective-alice-rounin-908325cd.koyeb.app/docs)

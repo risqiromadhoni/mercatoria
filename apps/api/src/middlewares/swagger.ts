@@ -1,3 +1,4 @@
+import { components, tags } from "@/swaggers";
 import swagger from "@elysiajs/swagger";
 
 export default swagger({
@@ -13,21 +14,7 @@ export default swagger({
 				url: "https://www.heyris.me",
 			},
 		},
-		components: {
-			securitySchemes: {
-				DeviceId: {
-					type: "apiKey",
-					in: "header",
-					name: "X-Device-Id",
-					description: "Device ID for the request",
-				},
-				AuthToken: {
-					type: "apiKey",
-					in: "cookie",
-					name: "AuthToken",
-					description: "Authentication token for the request",
-				},
-			},
-		},
+		tags,
+		components,
 	},
 });

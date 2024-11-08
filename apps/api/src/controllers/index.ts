@@ -1,47 +1,9 @@
-import type { Elysia } from "elysia";
+import { authController } from "./auth";
+import { verifyController } from "./verify";
 
-class MainController {
-	#app: Elysia;
+const controllers = {
+	verifyController,
+	authController,
+};
 
-	constructor(app: Elysia) {
-		this.#app = app;
-	}
-
-	configureRoutes() {
-		this.#configureRoutes();
-	}
-
-	#configureRoutes() {
-		this.#getRoot();
-	}
-
-	#getRoot() {
-		this.#app.get("/", () => ({ message: "Hello Elysia" }), {
-			detail: {
-				summary: "Welcome to Elysia",
-				responses: {
-					200: {
-						description: "Welcome message",
-						content: {
-							"application/json": {
-								schema: {
-									type: "object",
-									properties: {
-										message: {
-											type: "string",
-										},
-									},
-								},
-								example: {
-									message: "Hello Elysia",
-								},
-							},
-						},
-					},
-				},
-			},
-		});
-	}
-}
-
-export default MainController;
+export default controllers;
